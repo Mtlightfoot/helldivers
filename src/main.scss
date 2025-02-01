@@ -31,10 +31,13 @@ body {
 
 .topBar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    margin-bottom: 24px;
 
     .pageTitle {
         color: #FDEE06;
+        margin: 0px;
     }
 
     img {
