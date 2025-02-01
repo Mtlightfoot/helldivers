@@ -5,14 +5,15 @@
     src: url('./fonts/authentic-sans-210330/desktop/authentic-sans-60.otf') format("opentype");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Major+Mono+Display&display=swap');
 
 // Fonts
 $logo-font: "Major Mono Display", serif;
 $font-authentic-sans-60: authentic-sans-60, sans-serif;
+$font-chakra-petch-regular: "Chakra Petch", serif;
 
 * {
-    font-family: $font-authentic-sans-60;
+    font-family: $font-chakra-petch-regular;
 }
 
 body {
@@ -20,6 +21,93 @@ body {
     padding: 0;
 }
 
+.pageContainer {
+    background-image: url('./space-background.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.topBar {
+    display: flex;
+    justify-content: space-between;
+
+    .pageTitle {
+        color: #FDEE06;
+    }
+
+    img {
+        width: 10%;
+    }
+}
+
+
+
 .majorOrder {
-    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+
+    .majorOrderHeader {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-bottom: white 1px solid;
+        padding: 8px 16px;
+        background-image: url("./helldivers-bg.png");
+        background-position: center;
+        background-size: cover;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 1);
+    }
+
+    .majorOrderText {
+        font-family: "Chakra Petch", serif;
+        color: #D1DEE4;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 20px;
+    }
+}
+
+.orderOverviewTitle,
+.orderOverviewText {
+    color: #CC818E;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.majorOrderRewardCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
+    background-image: url('./diagonal-stripes.svg');
+    background-size: 3%;
+
+    h1 {
+        color: #C7C7C7;
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+    .majorOrderRewardAmountCard {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #2D2D2D;
+        margin-bottom: 0.5rem;
+        margin: 0px 80px 15px 80px;
+        padding: 15px 50px;
+
+        h2 {
+            margin: 0;
+        }
+
+        img {
+            width: 50%;
+        }
+    }
 }
