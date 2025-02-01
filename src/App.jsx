@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './main.scss'
-import MajorOrder from './components/majorOrder';
+import MajorOrder from './components/MajorOrder';
 
 function App() {
 
