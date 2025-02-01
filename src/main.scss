@@ -1,0 +1,25 @@
+@import './bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: 'authentic-sans-60';
+    src: url('./fonts/authentic-sans-210330/desktop/authentic-sans-60.otf') format("opentype");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+// Fonts
+$logo-font: "Major Mono Display", serif;
+$font-authentic-sans-60: authentic-sans-60, sans-serif;
+
+* {
+    font-family: $font-authentic-sans-60;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.majorOrder {
+    border: 1px solid black;
+}
