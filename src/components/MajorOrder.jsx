@@ -1,31 +1,74 @@
-import Button from 'react-bootstrap/Button';
+// Bootstrap imports
 import Card from 'react-bootstrap/Card';
 
+//API import
+import API from '../utils/HelldiverApi';
+
+// React imports
+import React, { useEffect, useState } from "react";
+
 function MajorOrder() {
+
+    const [searchResult, setSearchResult] = useState("");
+
+    const query = (query) => {
+        API.search(query)
+            .then(res => { setSearchResult({ ...searchResult, results: res.data }) })
+            .catch(err => { console.log(err) });
+    }
+
+    useEffect(() => {
+        console.log(searchResult.results);
+    }, [searchResult]);
+
+    useEffect(() => {
+        API.search("assignments")
+            .then(res => { setSearchResult({ ...searchResult, results: res.data }) })
+            .catch(err => { console.log(err) });
+    }, [])
+
     return (
         <Card className='majorOrder'>
             <Card.Header className='majorOrderHeader'>MAJOR ORDER</Card.Header>
-            <Card.Body>
-                <Card.Text className='majorOrderText'>
-                    Liberate the despicable Automaton Petafactory on Varylia 5 so it may be converted into an EXO-49 EMANCIPATOR EXOSUIT factory.
-                </Card.Text>
-                <Card.Title className='orderOverviewTitle'>
-                    ORDER OVERVIEW
-                </Card.Title>
-                <Card.Text className='orderOverviewText'>
-                    Liberate the designated planet.
-                </Card.Text>
-                <Card.Text className='orderOverviewTitle'>
-                    VARYLIA 5
-                </Card.Text>
-                <div className='majorOrderRewardCard'>
-                    <h1>REWARD</h1>
-                    <div className='majorOrderRewardAmountCard'>
-                        <img src="./medal.png" alt="" />
-                        <h2>50</h2>
+            {searchResult.results ? (
+                <Card.Body>
+                    <Card.Text className='majorOrderText'>
+                        {searchResult.results[0].briefing}
+                    </Card.Text>
+
+                    {/* <h1 className='orderOverviewTitle'>
+                        ORDER OVERVIEW
+                    </h1>
+                    <p className='orderOverviewText'>
+                        {searchResult.results[0].description}
+                    </p> */}
+
+                    {searchResult.results[0].description ? (
+                        <>
+                            <h1 className='orderOverviewTitle'>
+                                ORDER OVERVIEW
+                            </h1>
+                            <p className='orderOverviewText'>
+                                {searchResult.results[0].description}
+                            </p>
+                            <p className='orderOverviewTitle'>
+                                VARYLIA 5
+                            </p>
+                        </>
+                    ) : ('')}
+
+
+
+                    <div className='majorOrderRewardCard'>
+                        <h1>REWARD</h1>
+                        <div className='majorOrderRewardAmountCard'>
+                            <img src="./medal.png" alt="" />
+                            <h2>{searchResult.results[0].reward.amount}</h2>
+                        </div>
                     </div>
-                </div>
-            </Card.Body>
+                </Card.Body>
+            ) : (<h1 className='orderOverviewTitle'>Loading Order...</h1>)
+            }
         </Card>
     );
 }

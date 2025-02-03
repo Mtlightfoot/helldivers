@@ -7,7 +7,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import './main.scss'
+
+//Component Imports
 import MajorOrder from './components/MajorOrder';
+import Statistics from './components/Statistics';
 
 function App() {
 
@@ -21,6 +24,9 @@ function App() {
         <Row>
           <Col sm={12} md={6}>
             <MajorOrder />
+          </Col>
+          <Col sm={12} md={6}>
+            <Statistics />
           </Col>
         </Row>
         <Row>
