@@ -45,6 +45,26 @@ body {
     }
 }
 
+.majorOrderEndBox {
+    display: flex;
+    justify-content: end;
+    font-weight: 600;
+    margin-bottom: 5px;
+
+    .majorOrderEndTag {
+        color: #FDEE06;
+        padding-right: 10px;
+        margin: 0;
+    }
+
+    .majorOrderEndTagTime {
+        color: black;
+        background-color: #FDEE06;
+        padding: 0px 30px;
+        margin: 0;
+    }
+}
+
 
 
 .majorOrder {
@@ -111,6 +131,65 @@ body {
 
         img {
             width: 50%;
+        }
+    }
+}
+
+.spaceStation {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-bottom: 20px;
+
+    .spaceStationHeader {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-bottom: white 1px solid;
+        padding: 8px 16px;
+        background-image: url("/helldivers-bg-3.jpg");
+        background-position: center;
+        background-size: cover;
+        text-shadow: 2px 4px 3px rgba(0, 0, 0, 1);
+    }
+
+    .currentLocationTitle {
+        color: #D1DEE4;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .currentLocationText {
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .hazardBox {
+        margin-top: 20px;
+
+        .hazardTitle {
+            color: #D1DEE4;
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 20px;
+            margin-bottom: 12px;
+            padding-bottom: 0px;
+            border-bottom: 1px solid #D1DEE4;
+        }
+
+        .hazardName {
+            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .hazardDescription {
+            color: white;
         }
     }
 }

@@ -7,7 +7,7 @@ import API from '../utils/HelldiverApi';
 // React imports
 import React, { useEffect, useState } from "react";
 
-function MajorOrder() {
+function Statistics() {
 
     const [searchResult, setSearchResult] = useState("");
 
@@ -17,9 +17,9 @@ function MajorOrder() {
             .catch(err => { console.log(err) });
     }
 
-    useEffect(() => {
-        console.log(searchResult.results);
-    }, [searchResult]);
+    // useEffect(() => {
+    //     console.log(searchResult.results);
+    // }, [searchResult]);
 
     useEffect(() => {
         API.search("war")
@@ -68,8 +68,8 @@ function MajorOrder() {
                 </Card.Body>
             ) : (<h1 className='orderOverviewTitle'>Loading Statistics...</h1>)
             }
-        </Card >
+        </Card>
     );
 }
 
-export default MajorOrder;
+export default Statistics;

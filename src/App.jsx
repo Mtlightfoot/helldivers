@@ -10,6 +10,7 @@ import './main.scss'
 
 //Component Imports
 import MajorOrder from './components/MajorOrder';
+import SpaceStation from './components/SpaceStation';
 import Statistics from './components/Statistics';
 
 function App() {
@@ -26,11 +27,13 @@ function App() {
             <MajorOrder />
           </Col>
           <Col sm={12} md={6}>
-            <Statistics />
+            <SpaceStation />
           </Col>
         </Row>
         <Row>
-          <Col>Messages</Col>
+          <Col sm={12} md={6}>
+            <Statistics />
+          </Col>
         </Row>
       </Container>
     </div>
