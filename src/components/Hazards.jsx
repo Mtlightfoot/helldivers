@@ -15,8 +15,8 @@ function Hazards() {
     }
 
     useEffect(() => {
-        API.search("assignments")
-            .then(res => { setExpiration(res.data[0].expiration) })
+        API.search("space-stations")
+            .then(res => { setHazards(res.data[0].planet.hazards) })
             .catch(err => { console.log(err) });
     }, [])
 
